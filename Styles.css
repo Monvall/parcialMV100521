@@ -1,0 +1,133 @@
+/* Paleta de colores */
+:root {
+    --primary-color: #ff6f61;
+    --secondary-color: #2a9d8f;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --link-color: #1d3557;
+    --button-bg: #1d3557;
+    --button-hover-bg: #457b9d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+#news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-item {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: calc(33% - 40px);
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.news-item .content {
+    padding: 15px;
+}
+
+.news-item h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+
+.news-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.news-item a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: scale(1.05);
+}
+
+/* Estilos responsivos */
+@media (max-width: 1200px) {
+    .news-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+}
